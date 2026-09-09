@@ -1,0 +1,17 @@
+@media (min-width: 1181px) {
+  .app-frame .topbar--search-first {
+    grid-template-columns: 340px minmax(280px, 1fr);
+  }
+
+  .app-frame .topbar--search-first > .topbar-start {
+    display: none;
+  }
+
+  .app-frame .topbar--search-first > .global-search {
+    grid-column: 1;
+  }
+
+  .app-frame .topbar--search-first > .topbar-actions {
+    grid-column: 2;
+  }
+}
