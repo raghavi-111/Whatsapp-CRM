@@ -1,0 +1,4 @@
+export default function EmailComposer({ subject, body, onSubject, onBody }) {
+  const insert = (variable) => onBody(`${body}${body ? " " : ""}${variable}`);
+  return <section className="email-card"><div className="email-card__heading"><div><h2>Message</h2><p>Plain-text composer · personalization is preview-only in V1</p></div></div><label className="email-field"><span>Subject *</span><input required value={subject} onChange={(e) => onSubject(e.target.value)} placeholder="Partnership Opportunity for {{company}}" /></label><label className="email-field"><span>Message body *</span><textarea required rows="11" value={body} onChange={(e) => onBody(e.target.value)} placeholder="Hello {{name}}," /></label><div className="email-variables"><span>Insert variable:</span>{["{{name}}", "{{company}}", "{{email}}"].map((v) => <button type="button" key={v} onClick={() => insert(v)}>{v}</button>)}</div></section>;
+}

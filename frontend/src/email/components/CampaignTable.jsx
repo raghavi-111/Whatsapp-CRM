@@ -1,0 +1,5 @@
+import { MoreHorizontal } from "lucide-react";
+import CampaignStatusBadge from "./CampaignStatusBadge.jsx";
+export default function CampaignTable({ campaigns }) {
+  return <div className="email-table-wrap"><table className="email-table"><thead><tr><th>Campaign name</th><th>Recipients</th><th>Subject</th><th>Created</th><th>Schedule</th><th>Sent</th><th>Failed</th><th>Status</th><th><span className="sr-only">Actions</span></th></tr></thead><tbody>{campaigns.map((item) => <tr key={item.id}><td><strong>{item.name}</strong></td><td>{item.recipients}</td><td className="email-table__subject">{item.subject}</td><td>{item.created}</td><td>{item.schedule}</td><td>{item.sent}</td><td>{item.failed}</td><td><CampaignStatusBadge status={item.status} /></td><td><button className="email-icon-button" aria-label={`Actions for ${item.name}`} type="button"><MoreHorizontal size={17} /></button></td></tr>)}</tbody></table>{campaigns.length === 0 && <div className="email-empty">No campaigns match your filters.</div>}</div>;
+}

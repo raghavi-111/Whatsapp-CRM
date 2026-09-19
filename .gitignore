@@ -1,5 +1,15 @@
+# Environment files
+.env
+.env*.local
+.env.production
+
+# Terraform rules
 .terraform/
 *.tfstate
 *.tfstate.*
 *.tfvars
 .terraform.lock.hcl
+
+# Node & Docker dependencies
+node_modules/
+dist/
